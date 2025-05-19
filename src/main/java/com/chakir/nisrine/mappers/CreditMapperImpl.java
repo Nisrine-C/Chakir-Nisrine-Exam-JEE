@@ -48,11 +48,31 @@ public class CreditMapperImpl {
         return creditImmobilierDTO;
     }
 
+    public CreditProfessionel fromCreditProfessionnelDTO(CreditProfessionelDTO creditProfessionelDTO){
+        CreditProfessionel creditProfessionel=new CreditProfessionel();
+        BeanUtils.copyProperties(creditProfessionelDTO,creditProfessionel);
+        creditProfessionel.setClient(fromClientDTO(creditProfessionelDTO.getClient()));
+        return creditProfessionel;
+    }
+
+    public CreditProfessionelDTO fromCreditProfessionel(CreditProfessionel creditProfessionel){
+        CreditProfessionelDTO creditProfessionelDTO=new CreditProfessionelDTO();
+        BeanUtils.copyProperties(creditProfessionel,creditProfessionelDTO);
+        creditProfessionelDTO.setClient(fromClient(creditProfessionel.getClient()));
+        creditProfessionelDTO.setType(creditProfessionel.getClass().getSimpleName());
+        return creditProfessionelDTO;
+    }
 
 
-    public RemboursementDTO fromAccountOperation(Remboursement remboursement){
+
+    public RemboursementDTO fromRemboursement(Remboursement remboursement){
         RemboursementDTO remboursementDTO=new RemboursementDTO();
         BeanUtils.copyProperties(remboursement,remboursementDTO);
         return remboursementDTO;
+    }
+    public Remboursement fromRemboursementDTO(RemboursementDTO remboursementDTO){
+        Remboursement remboursement = new Remboursement();
+        BeanUtils.copyProperties(remboursementDTO, remboursement);
+        return remboursement;
     }
 }

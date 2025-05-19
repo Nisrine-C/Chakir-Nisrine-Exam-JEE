@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class CreditProfessionelDTO {
+public class CreditProfessionelDTO extends CreditDTO{
     private Long id;
     private Date dateDemande;
     private StatutType statut;
