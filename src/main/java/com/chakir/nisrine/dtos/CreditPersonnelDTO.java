@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class CreditPersonnelDTO {
+public class CreditPersonnelDTO extends CreditDTO{
     private Long id;
     private Date dateDemande;
     private StatutType statut;

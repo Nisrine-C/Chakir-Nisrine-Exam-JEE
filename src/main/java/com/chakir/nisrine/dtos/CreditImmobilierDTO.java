@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class CreditImmobilierDTO {
+public class CreditImmobilierDTO extends CreditDTO{
     private Long id;
     private Date dateDemande;
     private StatutType statut;
