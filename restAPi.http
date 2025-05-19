@@ -1,0 +1,9 @@
+POST http://localhost:8086/auth/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin&password=12345
+###
+
+GET localhost:8086/credits
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc0NzY1MDgxMSwiaWF0IjoxNzQ3NjUwMjExLCJzY29wZSI6IlJPTEVfQURNSU5ST0xFX0NMSUVOVFJPTEVfRU1QTE9ZRSJ9.AZMWu4DloO7_arxSoehfufCypclFjfBex2IKEZv1xLNIEhpwuIHk0fhslqH3_eJzTq1Nm2udW9oBq0BAqA4xng
