@@ -20,7 +20,8 @@ import java.util.stream.Collectors;
 @Transactional
 @AllArgsConstructor
 @Slf4j
-public class BankCreditServiceImpl implements BankCreditService {
+public class
+BankCreditServiceImpl implements BankCreditService {
 
     private ClientRepository clientRepository;
     private CreditRepository creditRepository;

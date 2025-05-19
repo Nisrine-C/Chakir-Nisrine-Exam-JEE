@@ -14,7 +14,6 @@ public interface BankCreditService {
     ClientDTO updateClient(ClientDTO clientDTO);
     void deleteClient(Long clientId);
 
-    // === Credit Operations ===
     CreditPersonnelDTO saveCreditPersonnel(CreditPersonnelDTO dto) throws ClientNotFoundException;
     CreditImmobilierDTO saveCreditImmobilier(CreditImmobilierDTO dto) throws ClientNotFoundException;
     CreditProfessionelDTO saveCreditProfessionel(CreditProfessionelDTO dto) throws ClientNotFoundException;
