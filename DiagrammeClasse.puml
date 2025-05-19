@@ -1,0 +1,66 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' ==== Classes ====
+class Client {
+  - id: Long
+  - nom: String
+  - email: String
+}
+
+class Credit {
+  - id: Long
+  - dateDemande: Date
+  - statut: StatutType
+  - dateAcception: Date
+  - montant: Double
+  - dureeRemboursement: int
+  - tauxInteret: float
+}
+
+enum StatutType {
+  EN_COURS
+  ACCEPTE
+  REJETE
+}
+
+class CreditPersonnel {
+  - motif: String
+}
+
+class CreditImmobilier {
+  - bienType: BienType
+}
+
+enum BienType {
+  APPARTEMENT
+  MAISON
+  LOCAL_COMMERCIAL
+}
+
+class CreditProfessionnel {
+  - motif: String
+  - raisonSociale: String
+}
+
+class Remboursement {
+  - id: Long
+  - date: Date
+  - montant: Double
+  - type: RemboursementType
+}
+
+enum RemboursementType {
+  MENSUALITE
+  REMBOURSEMENT_ANTICIPE
+}
+
+
+Credit <|-- CreditPersonnel
+Credit <|-- CreditImmobilier
+Credit <|-- CreditProfessionnel
+
+Credit "0..*" -- "1" Client
+Remboursement "0..*" -- "1" Credit
+
+@enduml
